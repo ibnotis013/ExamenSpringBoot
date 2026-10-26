@@ -15,7 +15,7 @@ public class ExpedienteAcademico {
 
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id_expediente;
 
     @Column(unique = true, nullable = false)
     private String numeroExpediente;
@@ -36,11 +36,11 @@ public class ExpedienteAcademico {
     }
 
     public Long getId() {
-        return id;
+        return id_expediente;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.id_expediente = id;
     }
 
     public String getNumeroExpediente() {

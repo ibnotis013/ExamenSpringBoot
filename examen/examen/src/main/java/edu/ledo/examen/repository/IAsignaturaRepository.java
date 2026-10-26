@@ -7,7 +7,5 @@ import edu.ledo.examen.entity.Asignatura;
 
 public interface IAsignaturaRepository extends JpaRepository<Asignatura,Long>{
 
-
-int countByCreditosEquals(int creditos);
-    
+    long countByCreditos(int creditos);
 }

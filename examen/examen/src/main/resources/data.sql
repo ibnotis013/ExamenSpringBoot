@@ -1,6 +1,6 @@
 INSERT INTO
-    expedientes (
-        id,
+    ExpedientesAcademicos (
+        id_expediente,
         numero_expediente,
         fecha_apertura,
         nota_media_acceso
@@ -67,7 +67,7 @@ VALUES (
     );
 
 INSERT INTO
-    asignaturas (id, nombre, creditos, codigo)
+    asignaturas (id_asignatura, nombre, creditos, codigo)
 VALUES (
         1,
         'Acceso a Datos',
@@ -130,8 +130,8 @@ VALUES (
     );
 
 INSERT INTO
-    estudiantes (
-        id,
+    Estudiantes (
+        id_estudiante,
         dni,
         nombre,
         apellidos,
@@ -210,7 +210,7 @@ VALUES (
 
 INSERT INTO
     matriculas (
-        id,
+        id_matricula,
         fecha_matriculacion,
         calificacion,
         convocatoria,

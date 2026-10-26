@@ -1,10 +1,16 @@
 package edu.ledo.examen.entity;
 
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity 
@@ -24,6 +30,16 @@ private String nombre;
 
 @Column(nullable =false)
 private String apellidos;
+
+
+@OneToOne(cascade= CascadeType.ALL, orphanRemoval = true)
+@JoinColumn(name="id_expediente", referencedColumnName = "id_expediente")
+private ExpedienteAcademico expedienteAcademico;
+
+
+@OneToMany(mappedBy = "estudiante", cascade = CascadeType.ALL, orphanRemoval = true)
+private List<Matricula> matriculas;
+
 
 
 
@@ -67,6 +83,14 @@ public String getApellidos() {
 
 public void setApellidos(String apellidos) {
     this.apellidos = apellidos;
+}
+
+public ExpedienteAcademico getExpedienteAcademico() {
+    return expedienteAcademico;
+}
+
+public void setExpedienteAcademico(ExpedienteAcademico expedienteAcademico) {
+    this.expedienteAcademico = expedienteAcademico;
 }
 
 

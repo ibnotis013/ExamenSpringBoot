@@ -9,9 +9,4 @@ import edu.ledo.examen.entity.Estudiante;
 public interface IEstudianteRepository extends JpaRepository<Estudiante,Long>{
 
     Optional<Estudiante> findByDni(String dni);
-    
-
-
-
-
 }

@@ -10,6 +10,8 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -29,6 +31,14 @@ public class Matricula {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Convocatoria convocatoria;
+
+    @ManyToOne
+    @JoinColumn(name = "id_estudiante", nullable = false)
+    private Estudiante estudiante;
+
+    @ManyToOne
+    @JoinColumn(name = "id_asignatura", nullable = false)
+    private Asignatura asignatura;
 
     public Matricula() {
     }
@@ -71,6 +81,21 @@ public class Matricula {
         this.convocatoria = convocatoria;
     }
 
+    public Estudiante getEstudiante() {
+        return estudiante;
+    }
+
+    public void setEstudiante(Estudiante estudiante) {
+        this.estudiante = estudiante;
+    }
+
+    public Asignatura getAsignatura() {
+        return asignatura;
+    }
+
+    public void setAsignatura(Asignatura asignatura) {
+        this.asignatura = asignatura;
+    }
 
     
 
